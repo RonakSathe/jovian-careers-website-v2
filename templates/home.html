@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>Himanin Careers</title>
-    <style>
-      h1 {
-        font-size: 50px;color: rgb(100, 100, 100);text-align: center;
-      }
-      #banner {
-        width: 100%;height: 360px;object-fit: cover;
-      }
-      h2 {
-        font-family: Roboto;font-size: 32px;color:rgb(100, 100, 100);
-        text-align: center;font-weight: normal; }
-      P{font-family: Roboto;color:rgb(80, 80, 80);}
-      #container {max-width: 720px;margin:0 auto;}
+    <title>Hi-MENIN Careers</title>
 
-      .bodytext {
-        font-family:Roboto;color: rgb(80, 80, 80);
-      }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit: cover
     </style>
+    
+    
   </head>
   <body>
-    <div id="container">
-    <h1>HI-MENIN Careers </h1>
-    <img id="banner" src="../static/camaro.png" />
-    <h2>About Hi-Menin</h2>
-    <p class="bodytext"> As the hype around AI has accelerated, vendors have been scrambling to promote how their products and services use it. Often, what they refer to as AI is simply a component of the technology, such as machine learning. AI requires a foundation of specialized hardware and software for writing and training machine learning algorithms. No single programming language is synonymous with AI, but Python, R, Java, C++ and Julia have features popular with AI developers.
+    <div class="container" >
+   
+      <h1 class="text-center mt-4">{{company_name}} Careers for Cars</h1>
+    
+      <img class="img-fluid" id="banner" src="../static/camaro.png" />
+    
+      <h2 class="text-center">About Hi-Menin</h2>
+    
+      <p  class="lead"> As the hype around AI has accelerated, vendors have been scrambling to promote how           their products and services use it. Often, what they refer to as AI is simply a                 component of the technology, such as machine learning. AI requires a foundation of specialized hardware and software for writing and training machine learning algorithms. No single programming language is synonymous with AI, but Python, R, Java, C++ and Julia have features popular with AI developers.
 
-    <h2>Open Positions</h2>
-    <p class="bodytext">TODO- show the jobs here</p>
-    <div style="text-align:center;">
-      <button >CONTACT US</button>
-      <p>Copyright 2024, HI-MENIN</p>
-    </div>
+      <h2 class="text-center mt-2">Open Positions</h2>
+    
+      <p class="text-center mt-2">TODO- show the jobs here</p>
+
+      <p>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </p>
+
       
+      
+      <div class="text-center">
+        <button class="btn btn-primary btn-large">CONTACT US</button>
+        <p class="mt-4">Copyright 2024, HI-MENIN</p>
+      </div>
+    
+    
     </div>
+
+    
   </body>
+
 </html>
